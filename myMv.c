@@ -47,9 +47,7 @@ void check_parameter(const int count, const char* param1)
 bool is_exists(const char* item)
 {
     struct stat buf;
-    if (0 != stat(item, &buf))
-        return false;
-    return true;
+    return 0 != stat(item, &buf) ? false : true;
 }
 
 operation_t decide_operation(const char* param1, const char* param2)
