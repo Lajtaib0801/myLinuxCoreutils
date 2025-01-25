@@ -16,7 +16,7 @@ typedef enum operation
 
 void check_parameter(const int, const char*);
 bool is_exists(const char*);
-operation_t decide_operation(char*, char*);
+operation_t decide_operation(const char*, const char*);
 char* get_item_parents(const char*);
 char* get_item(const char*);
 
@@ -52,7 +52,7 @@ bool is_exists(const char* item)
     return true;
 }
 
-operation_t decide_operation(char* param1, char* param2)
+operation_t decide_operation(const char* param1, const char* param2)
 {
     //TODO: This should be expanded (devices for example)
     struct stat p1_stat;
